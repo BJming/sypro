@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="hibernate.cfg.xml/Hibernate" uuid="5e6697b1-abae-470b-b1c2-144a1ae9193a">
+      <database-info product="MySQL" version="5.7.15-1" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
+        <extra-name-characters>#@</extra-name-characters>
+        <identifier-quote-string>`</identifier-quote-string>
+      </database-info>
+      <case-sensitivity plain-identifiers="exact" quoted-identifiers="exact" />
+      <user-name>root</user-name>
+      <user-password>dfc8dfc0dfc7df9bdf92df9ddf9cdf9ddf99df98df9ddf93df9edf9a</user-password>
+      <resolve-scope>sy:</resolve-scope>
+    </data-source>
+  </component>
+</project>
