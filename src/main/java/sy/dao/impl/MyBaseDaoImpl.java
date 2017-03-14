@@ -165,34 +165,61 @@ public class MyBaseDaoImpl<T> implements MyBaseDaoI<T> {
         SQLQuery q = this.getCurrentSession().createSQLQuery(sql);
         return q.setFirstResult((page -1) * rows).setMaxResults(rows).list();
     }
-//TODO：编写到此findBySql，待完成 findBySql
     @Override
     public List<Object[]> findBySQL(String sql, Map<String, Object> params) {
-        return null;
+        SQLQuery q = this.getCurrentSession().createSQLQuery(sql);
+        if(params != null && !params.isEmpty()){
+            for(String key : params.keySet()){
+                q.setParameter(key, params.get(key));
+            }
+        }
+        return q.list();
     }
 
     @Override
     public List<Object[]> findBySql(String sql, Map<String, Object> params, int page, int rows) {
-        return null;
+        SQLQuery q = this.getCurrentSession().createSQLQuery(sql);
+        if(params != null && !params.isEmpty()){
+            for(String key : params.keySet()){
+                q.setParameter(key, params.get(key));
+            }
+        }
+        return q.setFirstResult((page-1)*rows).setMaxResults(rows).list();
     }
 
     @Override
     public int executeSql(String sql) {
-        return 0;
+
+        SQLQuery q = this.getCurrentSession().createSQLQuery(sql);
+        return q.executeUpdate();
     }
 
     @Override
     public int executeSql(String sql, Map<String, Object> params) {
-        return 0;
+        SQLQuery q = this.getCurrentSession().createSQLQuery(sql);
+        if(params!=null && !params.isEmpty()){
+            for(String key : params.keySet()){
+                q.setParameter(key, params.get(key));
+            }
+        }
+        return q.executeUpdate();
     }
 
     @Override
     public BigInteger countBySql(String sql) {
-        return null;
+        SQLQuery q = this.getCurrentSession().createSQLQuery(sql);
+        return (BigInteger) q.uniqueResult();
     }
 
     @Override
     public BigInteger countBySql(String sql, Map<String, Object> params) {
-        return null;
+        SQLQuery q = this.getCurrentSession().createSQLQuery(sql);
+        if(params!=null && !params.isEmpty()){
+            for(String key : params.keySet()){
+                q.setParameter(key, params.get(key));
+            }
+        }
+        return (BigInteger)q.uniqueResult();
     }
+//    TODO:编写完成，请检查是否有无方法陋写或错误
 }
