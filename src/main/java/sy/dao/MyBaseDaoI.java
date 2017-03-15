@@ -59,10 +59,10 @@ public interface MyBaseDaoI<T> {
     public List<Object[]> findBySql(String sql);
 
     /*获取结果集 @param sql SQL语句 @param page 要显示第几页 @param rows每页显示多少条 @return 结果集*/
-    public List<Object[]> findBySQL(String sql, int page, int rows);
+    public List<Object[]> findBySql(String sql, int page, int rows);
 
     /*获得结果集 @param sql SQL语句 @param params 参数 @return 结果集*/
-    public List<Object[]> findBySQL(String sql, Map<String , Object> params);
+    public List<Object[]> findBySql(String sql, Map<String , Object> params);
 
     /*获得结果集 @param sql SQL语句 @param params 参数 @param page 要显示第几页 @param rows每页显示多少条 @return 结果集*/
     public List<Object[]> findBySql(String sql, Map<String, Object> params, int page, int rows);

@@ -161,12 +161,12 @@ public class MyBaseDaoImpl<T> implements MyBaseDaoI<T> {
     }
 
     @Override
-    public List<Object[]> findBySQL(String sql, int page, int rows) {
+    public List<Object[]> findBySql(String sql, int page, int rows) {
         SQLQuery q = this.getCurrentSession().createSQLQuery(sql);
         return q.setFirstResult((page -1) * rows).setMaxResults(rows).list();
     }
     @Override
-    public List<Object[]> findBySQL(String sql, Map<String, Object> params) {
+    public List<Object[]> findBySql(String sql, Map<String, Object> params) {
         SQLQuery q = this.getCurrentSession().createSQLQuery(sql);
         if(params != null && !params.isEmpty()){
             for(String key : params.keySet()){
